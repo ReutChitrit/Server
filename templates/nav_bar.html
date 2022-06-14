@@ -1,0 +1,26 @@
+ <link rel="stylesheet" href="{{ url_for('static', filename = 'cookiesStyler.css')}}">
+    <script defer src="{{ url_for('static', filename = 'CookiesJS.js')}}"></script>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ContactUs</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'cookiesStyler.css')}}">
+    <script defer src="{{ url_for('static', filename = 'CookiesJS.js')}}"></script>
+</head>
+
+<header>
+    <nav>
+      <ul class="nav_links">
+        {% if session['registered'] %}
+            <li id=greeting> Welcome, {{ session['username'] | capitalize() }}</li>
+        {% endif %}
+        <li><a href = "{{ url_for('go_to_homepage')}}"> Homepage</a></li>
+         <li><a href = "{{ url_for('go_to_contactus')}}"> Contact Us</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/registerandsearch">Register and Search</a></li>
+      </ul>
+    </nav>
+
+        <a class = "cta" href ="#"><button>Reut's Cookie Shop</button></a>
+ </header>

@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% block main %}
+    {{ super() }}
+
+
+<body>
+    <div id="containter">
+
+    <div id ="center">
+        <h1 class=title-ContactUs > Contact Us </h1> 
+     <form action="" method="get">
+        <img src={{url_for('static', filename = 'mm-cookies.jpg')}} class= cookie1 > <br> <br>
+
+        <label class = label for="cookieType">Favorite cookie type:</label> 
+        <input type="text" name="cookieType" id="cookieType" > <br> <br>
+        <label class = label for="topping" >Favorite topping:</label>
+        <input type="text" name="topping" id="topping" required> <br> <br>
+        <label class = label for="texture"> Favorite cookie texture: </label> 
+        <input type="text" name="texture" id="texture"> <br> <br>
+        <label class = label for="PhoneNumber" >Customer Phone Number:</label>
+        <input type="tel" name="PhoneNumber" id="PhoneNumber" required pattern="[0][5][0-9]-[0-9][0-9][0-9][0-9][0-9][0-9][0-9]" > <br> <br>
+
+        <label class = label for="flavor"> Favorite flavor:</label>
+        <input list= flavorList name="flavor" id="flavor" > 
+        <datalist id= "flavorList">
+            <option value = "chocolate">
+            <option value = "vanilla">
+            <option value = "velvet">
+        </datalist> <br> <br>
+
+        <label class = label for="additionalInfo">Additional information:</label> <br> <br>
+        <textarea id="additional" name="additional" placeholder="Add requests" required minlength="10" maxlength="200"></textarea>  <br> <br>
+
+       
+        <input id = submitButton type="submit" value="submit"> <br> <br>
+
+     </form>
+     <div ><p id=" timerMessage" >Submit in the next <span id="time">01:00</span> seconds and get a free cookie, on the house!</p></div>
+
+    </div>
+
+
+   </div>
+{% endblock %}

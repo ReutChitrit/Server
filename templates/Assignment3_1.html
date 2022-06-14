@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% block main %}
+    {{ super() }}
+
+    <h1>About Me</h1>
+
+    {% if user_info %}
+        <div class="container">
+            <h2>User Info </h2>
+            {% for title, value in user_info.items() %}
+                 <li>
+                <h3>{{ title }}: {{ value }}</h3>
+                 </li>
+
+            {% endfor %}
+        </div>
+   </div>
+    <div class="container">
+        <h2>TV Characters  </h2>
+            {% for char in tv_characters %}
+                <li>
+                    <h3>{{ char | capitalize() }} </h3>
+                </li>
+            {% endfor %}
+    </div>
+    <div class="container">
+        <h2>Movies</h2>
+            {% for movie in movies %}
+                <li>
+                <h3>{{ movie | upper() }} </h3>
+                </li>
+            {% endfor %}
+    </div>
+
+    {% else %}
+        <h3>User was not found.</h3>
+    {% endif %}
+{% endblock %}
+
+
+

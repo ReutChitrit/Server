@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+
+{% block title %}Log In Page{% endblock %}
+
+{% block main %}
+        {{ super() }}
+
+    {% if session['registered'] %}
+        <h1>You have registered successfully, {{ session['username'] | upper() }}</h1>
+        <br>
+        <h2>Search:</h2>
+        <form action="/registerandsearch" method="get">
+            <input type="text" name="user_username" placeholder="Username"><br><br>
+            <input type="submit">
+        </form>
+
+        {% if user_username %}
+            <br>
+            <a>{{user_username}}</a><br>
+            <a>Email: {{user_email}}</a><br>
+            <a>Age: {{user_age}}</a><br>
+        {% endif %}
+
+        {% if user_dict %}
+            <ol>
+            {% for k, v in user_dict.items() %}
+                <li><a>Username: {{ k }}</a></li><br>
+                <li><a>Email: {{ v[0] }}</a></li><br>
+                <li><a>Age: {{ v[1] }}</a></li><br><br>
+            {% endfor %}
+            </ol>
+        {% endif %}
+        <br><br><br><br><br><br><br>
+        <a id = logout href="{{url_for('logout_func')}}"> Log out</a>
+
+    {% else %}
+        <h1>Registration and Search Page</h1>
+        {% if message %}
+            <a>{{ message }}</a>
+        {% endif %}
+        <h2>Search:</h2>
+        <form action="/registerandsearch" method="get">
+            <input type="text" name="user_username" placeholder="Username"><br><br>
+            <input type="submit">
+        </form>
+        {% if user_username %}
+            <br>
+            <a>{{user_username}}</a><br>
+            <a>Email: {{user_email}}</a><br>
+            <a>Age: {{user_age}}</a><br>
+        {% endif %}
+
+        {% if user_dict %}
+            <ol>
+            {% for k, v in user_dict.items() %}
+                <li><a>Username: {{ k }}</a></li><br>
+                <li><a>Email: {{ v[0] }}</a></li><br>
+                <li><a>Age: {{ v[1] }}</a></li><br><br>
+            {% endfor %}
+            </ol>
+        {% endif %}
+
+        <h2>Registration:</h2>
+        <form action="/registerandsearch" method="post">
+            <input type="text" name="username" placeholder="Username" required><br><br>
+            <input type="email" name="email" placeholder="Email" required><br><br>
+            <input type="int" name="age" placeholder="Age" required><br><br>
+            <input type="submit" value="Submit">
+        </form>
+    {% endif %}
+
+
+{% endblock %}
