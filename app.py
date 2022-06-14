@@ -2,6 +2,7 @@ import none
 from flask import Flask, render_template, redirect, url_for
 from datetime import timedelta
 from flask import request, session, jsonify
+import mysql.connector
 
 app = Flask(__name__)
 
