@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block main %}
+{{ super() }}
+
+
+ <body>
+
+    <div id="containter">
+    <div id =centerHome> 
+        <h1  class=title-Homepage >Cookie Shop Homepage</h1>
+        <p class = p1> Welcome to our cookie shop. Enjoy! <br> </p>
+        <img src={{url_for('static', filename = 'mm-cookies.jpg')}} class= cookie1 > <br> <br>
+
+    </div>
+
+    
+    <div id =footerHome >
+        <h3 class=Homepage> There's nothing better than a good cookie... </h3>
+    </div>
+   
+    <form action="" method="get">
+
+        <input id = ingredient type="ingredient" value="What's so special?" onclick = "PrintAfterSubmit()"><br> <br>
+        <p id = "Text1"></p><br> 
+    </form>
+    
+</div>
+{% endblock %}
+

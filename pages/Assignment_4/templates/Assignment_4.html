@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+
+{% block title %}Log In Page{% endblock %}
+
+{% block main %}
+    {{ super() }}
+
+    {% if message %}
+        <br>
+        <div id = message1>
+         {{ message }}
+         </div>
+    {% endif %}
+
+    <h2>Insert Form</h2>
+    <form action="/insert" method="post">
+        <input type="text" name="username" placeholder="Username" required><br><br>
+        <input type="email" name="email" placeholder="Email" required><br><br>
+        <input type="int" name="age" placeholder="Age" required><br><br>
+        <input type="submit">
+    </form>
+    <br>
+
+     <h2>Update Form</h2>
+    <form action="/update" method="post">
+        <input type="text" name="username" placeholder="Username" required><br><br>
+        <input type="email" name="email" placeholder="Email" required><br><br>
+        <input type="int" name="age" placeholder="Age" required><br><br>
+        <input type="submit">
+    </form>
+    <br>
+
+    <h2>Delete Form</h2>
+    <form action="/delete" method="post">
+        <input type="text" name="username" placeholder="Username" required><br><br>
+        <input type="submit">
+    </form>
+<br><br>
+
+   {% for user in users %}
+       <div class="container">
+            <p>{{ user.name }}</p>
+            <p>email: {{ user.email }}</p>
+            <p>age: {{ user.age }}</p>
+           <br>
+       </div>
+   {% endfor%}
+
+
+   <h2>Front End - Find User</h2>
+    Enter User id: <input type="text" id="user_id" >
+    <button onclick="find_user(document.getElementById('user_id').value)">Click Me</button>
+    <main>
+    </main>
+
+
+    <h2>Back End - Find User</h2>
+    <form action="/Assignment_4/outer_source" method="get">
+        Enter User id: <input type="text" name="user_id">
+        <button type="submit" value="Get User">Click Me</button></h3>
+    </form>
+
+    {% if session.user %}
+        <h4>ID: {{ session.user.id }}</h4>
+        <h4>Email: {{ session.user.email }}</h4>
+        <h4>First name: {{ session.user.first_name }}</h4>
+        <h4>Last name: {{ session.user.last_name }}</h4>
+        <img src="{{ session.user.avatar }}" alt="photo">
+        <hr>
+    {% endif %}
+
+{% endblock %}

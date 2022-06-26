@@ -1,0 +1,260 @@
+* {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color:rgb(227, 197, 218)
+;
+}
+
+li, a, button{
+font-size: 100%;
+color:rgb(119, 7, 7);
+text-decoration: none;
+grid-area: header;
+}
+
+#header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1% 0%;
+    grid-area: header;
+
+}
+
+.nav_links {
+    list-style: none;
+    grid-area: header;
+
+}
+
+.nav_links li {
+    display: inline-block;
+    padding: 0% 20px;
+    grid-area: header;
+
+}
+
+.nav_links li a {
+    grid-area: header;
+
+}
+
+.nav_links li a.active {
+  background:rgb(189, 73, 141)
+}
+
+.nav_links li a:hover{
+    color:rgb(24, 103, 199);
+    grid-area: header;
+
+}
+
+@keyframes blink {
+    0% {
+      opacity: 0;
+    }
+    50% {
+      opacity: .5;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+
+button{
+    padding: 1.5% 1.5%;
+    background-color: rgb(172, 225, 208);
+    border: 2px solid rgb(231, 16, 198);
+    border-radius: 0%;
+    cursor: pointer;
+    animation: blink 1s infinite;
+    grid-area: header;
+
+}
+
+
+
+h1.title-Homepage{
+color: rgb(119, 7, 7); 
+border: 2px solid rgb(231, 16, 198);
+background-color:rgb(217, 173, 212);
+margin: 2%; 
+padding: 2%;
+grid-area: center;
+
+
+}
+
+p.p1{
+color: rgb(119, 7, 7);
+border: 2px solid rgb(189, 73, 141);
+margin: 2%; 
+padding: 2%; 
+font-size: large;
+grid-area: center;
+}
+
+h3.Homepage{
+color: rgb(119, 7, 7);
+border: 2px solid rgb(231, 16, 198);
+margin-left: 25%;
+margin-right: 25%;
+
+padding: 2%;
+border-radius: 99%;
+grid-area: footer;
+
+}
+
+h1.title-ContactUs{
+    color: rgb(119, 7, 7);
+    background-color:rgb(217, 173, 212);
+    border: 2px solid rgb(231, 16, 198);
+    margin: 2%; 
+    padding:2%;
+    grid-area: center;
+
+}
+
+.label{
+color: rgb(218, 40, 206);
+border: 1px solid rgb(100, 165, 225);
+border-radius:80px;
+padding:0.3%;
+grid-area: center;
+
+
+}
+
+
+#additional{
+    height:90px;
+    width: 35%;
+    grid-area: center;
+
+}
+
+
+#submitButton{
+    color: rgb(119, 7, 7);
+    border: 2px solid rgb(231, 16, 198);
+    padding:0.5%;
+    background-color: rgb(172, 225, 208);
+    cursor: pointer;
+    font-weight: bold;
+
+}
+
+
+#submitButton:hover{
+    background-color:rgb(217, 173, 212);
+}
+
+
+#ingredient{
+color: rgb(119, 7, 7);
+border: 2px solid rgb(231, 16, 198);
+padding:2%;
+background-color: rgb(172, 225, 208);
+cursor: pointer;
+font-size: large;
+}
+
+#ingredient:hover{
+    background-color:rgb(217, 173, 212);
+}
+
+h3.ContactUs{
+    color: rgb(119, 7, 7);
+    border: 2px solid rgb(231, 16, 198);
+    margin-left: 40%;
+    margin-right: 40%;
+    padding: 2%;
+    border-radius: 99%;
+    grid-area: footer;
+
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {transform: translateY(0);} 
+    40% {transform: translateY(-30px);} 
+    60% {transform: translateY(-15px);} 
+ }
+
+.cookie1{
+    width: 15%;
+    padding: 2%;
+    animation: bounce; /* referring directly to the animation's @keyframe declaration */
+    animation-duration:5s; /* don't forget to set a duration! */
+    grid-area: center;
+
+}
+
+p.timerMessage{
+color: rgb(119, 7, 7);
+grid-area: center;
+
+}
+
+/**grid **/
+
+.div {
+    border: 2px solid black;
+    margin: 20px;
+    padding: 20px;
+}
+
+#container {
+    display: grid;
+    grid-template-areas: 
+    'header'
+    'center'
+    'footer';
+}
+
+@media only screen and (max-width: 600px) {
+   
+    #container {
+    display: grid;
+    grid-template-areas: 
+    'header'
+    'center'
+    'footer';
+    }  
+}
+
+/* active nav bar*/
+.active {
+    background-color: aquamarine;
+    color: aquamarine;
+}
+
+li {
+    display: inline;
+}
+
+#greeting {
+    margin-right: 20%;
+    }
+
+#logout{
+        border: 2px solid black;
+    padding: inherit;
+}
+
+.container {
+    border: rgb(202, 162, 145) 3px solid;
+    border-radius: 5px;
+    margin: 10px auto;
+    width: 50%;
+    padding: 10px;
+    align-content: center;
+    border-color: aquamarine;
+}
+
+#message1 {
+    color: blueviolet;
+}
