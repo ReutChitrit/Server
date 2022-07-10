@@ -10,3 +10,6 @@ def go_to_homepage():
 @homepage.route('/')
 def redirect_homepage():
     return redirect(url_for('homepage.go_to_homepage'))
+
+
+# fsdf
